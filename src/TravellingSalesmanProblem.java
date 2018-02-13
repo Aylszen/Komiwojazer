@@ -9,7 +9,14 @@ public class TravellingSalesmanProblem {
 		completeGraph.addCityToGraph(new City(7, -2));
 		completeGraph.addCityToGraph(new City(30, -6));
 		GreedyAlgorithm greedy = new GreedyAlgorithm(completeGraph.getCityListSize());
-		greedy.execute(completeGraph.cityArray, 0);
+		AStarAlgorithm aStar = new AStarAlgorithm(completeGraph.getCityListSize());
+
+		greedy.execute(Utilities.copyList(completeGraph.cityList), 0, 0); // przekazywanie
+																			// kopii
+																			// tablicy
+		aStar.execute(Utilities.copyList(completeGraph.cityList), 0, 0); // przekazywanie
+																			// kopii
+																			// tablicy
 	}
 
 }

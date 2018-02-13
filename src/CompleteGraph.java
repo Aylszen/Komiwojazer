@@ -1,16 +1,15 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.lang.Math;
 
 public class CompleteGraph {
 
-	protected List<City> cityArray;
+	protected ArrayList<City> cityList;
 	public CompleteGraph() {
-		this.cityArray = new ArrayList<City>();
+		this.cityList = new ArrayList<City>();
 	}
 
 	public void addCityToGraph(City city) {
-		cityArray.add(city);
+		cityList.add(city);
 	}
 
 	public static double calculateDistance(City first, City second) {
@@ -20,6 +19,6 @@ public class CompleteGraph {
 	
 	public int getCityListSize()
 	{
-		return cityArray.size();
+		return cityList.size();
 	}
 }

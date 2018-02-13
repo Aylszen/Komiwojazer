@@ -1,11 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public class GreedyAlgorithm {
+public class AStarAlgorithm {
 	double cost;
+	double heuristic;
+	double totalCost;
 	final int BIG_NUMBER = 99999999;
 	double distanceToStartingPoint;
 
-	public GreedyAlgorithm(int numberOfCities) {
+	public AStarAlgorithm(int numberOfCities) {
 		this.cost = 0;
 		this.distanceToStartingPoint = 0;
 	}
@@ -14,7 +17,7 @@ public class GreedyAlgorithm {
 		double tempCost = BIG_NUMBER;
 		int at = 0;
 		cityList.get(cityNumber).visited = true;
-		System.out.println("GREEDY DISTANCES:");
+		System.out.println("A STAR DISTANCES:");
 		for (City city : cityList) {
 			if (!city.visited && cityList.size() == 2) {
 				distanceToStartingPoint = CompleteGraph.calculateDistance(cityList.get(startingPoint), city);
@@ -36,7 +39,7 @@ public class GreedyAlgorithm {
 		}
 
 		if (!cityList.isEmpty()) {
-			System.out.println("GREEDY TOTAL COST:");
+			System.out.println("A STAR TOTAL COST:");
 			System.out.println(cost = cost + tempCost + distanceToStartingPoint);
 			System.out.println("********");
 			execute(cityList, at, startingPoint);
